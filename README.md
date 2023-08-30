@@ -1,1 +1,3 @@
-# stack_commerce_back
+# Stack Commerce Backend
+
+## About this project
