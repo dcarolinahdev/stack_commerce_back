@@ -2,7 +2,7 @@ import express from "express";
 import "dotenv/config.js";
 import cors from "cors";
 import morgan from "morgan";
-import ecommerceRouter from "./router/ecommerceRouter.js";
+import indexRouter from "./router/index.js";
 
 const serverApp = express(); // SERVER EXPRESS
 const PORT = process.env.PORT || 8000; // SET PORT
@@ -15,7 +15,7 @@ serverApp.use(morgan("dev")); // Get Http Log
 
 // Router
 
-serverApp.use("/api", ecommerceRouter);
+serverApp.use("/api", indexRouter);
 
 // Server Listen
 serverApp.listen(PORT, () => {
