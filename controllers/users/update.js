@@ -2,19 +2,17 @@ import UserModel from "../../models/User.js";
 
 export default async (req, res, next) => {
   try {
-    let all = await UserModel.find().select("-password");
+    let id = req.params.id;
+    let payload = req.body;
+    let update = await UserModel.findByIdAndUpdate({ _id: id }, payload).select(
+      "-password"
+    );
 
-    if (all) {
+    if (update) {
       return res.status(200).json({
         success: true,
-        message: "users found successfully",
-        response: all,
-      });
-    } else {
-      return res.status(400).json({
-        success: false,
-        message: "users not founds",
-        response: null,
+        message: "user updated successfully",
+        response: update,
       });
     }
   } catch (error) {

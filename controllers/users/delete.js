@@ -2,18 +2,18 @@ import UserModel from "../../models/User.js";
 
 export default async (req, res, next) => {
   try {
-    let all = await UserModel.find().select("-password");
+    let id = req.params.id;
+    let del = await UserModel.findByIdAndDelete(id);
 
-    if (all) {
+    if (del) {
       return res.status(200).json({
         success: true,
-        message: "users found successfully",
-        response: all,
+        message: "user delete successfully",
       });
     } else {
       return res.status(400).json({
         success: false,
-        message: "users not founds",
+        message: "user not deleted",
         response: null,
       });
     }
