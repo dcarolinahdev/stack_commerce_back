@@ -5,8 +5,11 @@ let schema = new Schema(
   {
     email: { type: String, required: true },
     password: { type: String, required: true },
+    name: { type: String, required: true },
     photo: { type: String, required: true },
-    role: { type: Number, default: 0 }
+    address: { type: String, required: true },
+    phone: { type: String, required: true },
+    role: { type: Number, default: 1 },
   },
   {
     timestamps: true,

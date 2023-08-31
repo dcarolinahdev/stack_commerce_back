@@ -6,7 +6,7 @@ import morgan from "morgan";
 import indexRouter from "./router/index.js";
 
 // Mongoose
-import "./database/mongoose.js";
+import "./config/database.js";
 
 const serverApp = express(); // SERVER EXPRESS
 const PORT = process.env.PORT || 8000; // SET PORT
@@ -18,7 +18,7 @@ serverApp.use(cors()); // Cors Other Origins
 serverApp.use(morgan("dev")); // Get Http Log
 
 // Router
-serverApp.use("/api", ecommerceRouter);
+serverApp.use("/api", indexRouter);
 
 // Server Listen
 serverApp.listen(PORT, () => {
