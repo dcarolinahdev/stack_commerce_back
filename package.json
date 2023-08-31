@@ -8,7 +8,7 @@
     "dev": "nodemon ./server.js",
     "products": "node ./models/data/products.js",
     "categories": "node ",
-    "users": "node "
+    "users": "node ./models/data/users.js"
   },
   "type": "module",
   "author": "",
