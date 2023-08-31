@@ -1,7 +1,9 @@
-import mongoose from 'mongoose'
+import mongoose from "mongoose";
+import "dotenv/config";
 
-let link = process.env.MONGO_URI
+let link = process.env.MONGODB_URI;
 
-mongoose.connect(link)
-.then(() => console.log('database connected'))
-.catch((error) => console.log(error))
+mongoose
+  .connect(link)
+  .then(() => console.log("database connected"))
+  .catch((error) => console.log(error));
