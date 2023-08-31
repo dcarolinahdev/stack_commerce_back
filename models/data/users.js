@@ -54,4 +54,4 @@ let users = [
 ]
 
 User.insertMany(users)
-console.log("Success!")
+console.log("Users created!")
