@@ -249,4 +249,4 @@
 // ]
 
 // Product.insertMany(products)
-// console.log("Success!")
+// console.log("Products created")
