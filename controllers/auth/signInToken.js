@@ -11,7 +11,7 @@ export default async (req, res, next) => {
     };
     return res.status(200).json({
       response: { token: req.token, user: req.user },
-      message: "User signin with token",
+      messages: ["User Signin with token"],
     });
   } catch (error) {
     next(error);
