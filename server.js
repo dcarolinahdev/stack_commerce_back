@@ -3,6 +3,8 @@ import "dotenv/config.js";
 import cors from "cors";
 import morgan from "morgan";
 import indexRouter from "./router/index.js";
+import not_found_handler from "./middlewares/not_found_handler.js";
+import error_handler from "./middlewares/error_handler.js";
 
 // Mongoose
 import "./config/database.js";
@@ -18,6 +20,8 @@ serverApp.use(morgan("dev")); // Get Http Log
 
 // Router
 serverApp.use("/api", indexRouter);
+serverApp.use(not_found_handler);
+serverApp.use(error_handler);
 
 // Server Listen
 serverApp.listen(PORT, () => {

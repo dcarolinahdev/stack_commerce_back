@@ -5,10 +5,10 @@ let schema = new Schema(
   {
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    name: { type: String, required: true },
+    name: { type: String, required: false },
     photo: { type: String, required: true },
-    address: { type: String, required: true },
-    phone: { type: String, required: true },
+    address: { type: String, required: false },
+    phone: { type: String, required: false },
     role: { type: Number, default: 1 },
   },
   {
