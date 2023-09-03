@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import "dotenv/config";
 
-let link = process.env.MONGODB_URI;
+let link = process.env.MONGO_URI;
 
 mongoose
   .connect(link)
