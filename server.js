@@ -13,6 +13,7 @@ const serverApp = express(); // SERVER EXPRESS
 const PORT = process.env.PORT || 8000; // SET PORT
 
 //Middlewares
+serverApp.use('/api/public',express.static('public'))
 serverApp.use(express.json()); // Server Use JSON
 serverApp.use(express.urlencoded({ extended: true })); // Query Extended
 serverApp.use(cors()); // Cors Other Origins
