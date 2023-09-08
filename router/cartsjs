@@ -1,0 +1,8 @@
+import { Router } from "express";
+import create from "../controllers/carts/create.js";
+
+let cartRouter = Router();
+
+cartsRouter.post('/', create);
+
+export default cartRouter;
