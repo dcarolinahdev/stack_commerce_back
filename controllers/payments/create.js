@@ -1,10 +1,16 @@
 import mercadopago from 'mercadopago'
 
-mercadopago.configure(
-    { access_token: 'MPAY_SECKEY' });
-    let preference = {
-        items: [
-            { title:'Test',quantity:3,currency_id:'COP',unit_price:5}
-        ]
-    };
-mercadopago.preferences.create(preference)
+    export default async(req, res) => {
+        mercadopago.configure({ access_token: process.env.MP_ACCESS_TOKEN })
+        let preference = {
+            items: req.body.products, //array de productos que se deben pagar
+            back_urls : {
+                success : process.env.CLIENT_URL + "/payment/success" ,
+                failure : process.env.CLIENT_URL + "/payment/failure" ,
+                pending : process.env.CLIENT_URL + "/payment/pending"
+            },
+        };
+
+        let response = await mercadopago.preferences.create(preference)
+        return res.status(201).redirect(response.body.init_point);
+    }
