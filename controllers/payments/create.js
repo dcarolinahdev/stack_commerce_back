@@ -1,7 +1,7 @@
 import mercadopago from 'mercadopago'
 
     export default async(req, res) => {
-        mercadopago.configure({ access_token: process.env.MP_ACCESS_TOKEN })
+        mercadopago.configure({ access_token: process.env.MPAY_SECKEY })
         let preference = {
             items: req.body.products, //array de productos que se deben pagar
             back_urls : {
