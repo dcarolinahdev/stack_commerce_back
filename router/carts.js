@@ -6,9 +6,9 @@ import destroy from '../controllers/carts/destroy.js'
 
 let cartRouter = Router();
 
-cartsRouter.get('/:id', read);
-cartsRouter.post('/', create);
-cartsRouter.put('/', update);
-cartsRouter.delete('/', destroy);
+cartRouter.get('/:id', read);
+cartRouter.post('/', create);
+cartRouter.put('/', update);
+cartRouter.delete('/', destroy);
 
 export default cartRouter;
