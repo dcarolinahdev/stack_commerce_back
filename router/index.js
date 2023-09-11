@@ -2,6 +2,7 @@ import { Router } from "express";
 import userRouter from "./users.js";
 import authRouter from "./auth.js";
 import productsRouter from "./products.js";
+import cartRouter from "./cart.js";
 import passport from "../middlewares/passport.js";
 
 const indexRouter = Router();
@@ -13,5 +14,6 @@ const indexRouter = Router();
 indexRouter.use("/auth", authRouter);
 indexRouter.use("/users", userRouter);
 indexRouter.use("/products", passport.authenticate('jwt',{ session:false }), productsRouter);
+indexRouter.use("/cart", passport.authenticate('jwt',{ session:false }), cartRouter);
 
 export default indexRouter;
