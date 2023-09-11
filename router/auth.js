@@ -7,6 +7,7 @@ import signInToken from "../controllers/auth/signInToken.js";
 import passport from "../middlewares/passport.js";
 import createHash from "../middlewares/createHash.js";
 import signUp from "../controllers/auth/signUp.js";
+import signout from "../controllers/auth/signout.js";
 import accountExistsSignUp from "../middlewares/accountExistsSignUp.js";
 import validator from "../middlewares/validator.js";
 import schemaSignUp from "../schemas/auth/signUp.js";
@@ -22,6 +23,7 @@ authRouter.post(
   signUp
 ); // create user
 
+authRouter.post('/signout', passport.authenticate('jwt', { session: false }), signout);
 authRouter.post(
   "/signin", // endpoint
   validator(schemaSignIn), // validator schema
