@@ -2,7 +2,7 @@ import { Router } from "express";
 import userRouter from "./users.js";
 import authRouter from "./auth.js";
 import productsRouter from "./products.js";
-import cartRouter from "../models/Cart.js";
+import cartRouter from "./cart.js";
 import categoriesRouter from './categories.js'
 import paymentsRouter from "./payments.js";
 import passport from "../middlewares/passport.js";
