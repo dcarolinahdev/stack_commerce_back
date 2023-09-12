@@ -23,7 +23,7 @@ authRouter.post(
   signUp
 ); // create user
 
-authRouter.post('/signout', passport.authenticate('jwt', { session: false }), signout);
+authRouter.put('/signout', passport.authenticate('jwt', { session: false }), signout);
 authRouter.post(
   "/signin", // endpoint
   validator(schemaSignIn), // validator schema
