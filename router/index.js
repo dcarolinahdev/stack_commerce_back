@@ -15,7 +15,7 @@ const indexRouter = Router();
 
 indexRouter.use("/auth", authRouter);
 indexRouter.use("/users", userRouter);
-indexRouter.use("/categories", passport.authenticate('jwt',{ session:false }), categoriesRouter);
+indexRouter.use("/categories", categoriesRouter);
 indexRouter.use("/products", passport.authenticate('jwt',{ session:false }), productsRouter);
 indexRouter.use("/cart", passport.authenticate('jwt',{ session:false }), cartRouter);
 indexRouter.use('/payments', paymentsRouter);
