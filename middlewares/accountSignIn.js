@@ -2,7 +2,7 @@ import User from "../models/User.js";
 
 export default async function accountExistsSignIn(req, res, next) {
   try {
-    console.log(req.body);
+    // console.log(req.body);
     const user = await User.findOne({ email: req.body.email });
     if (user) {
       req.user = {
