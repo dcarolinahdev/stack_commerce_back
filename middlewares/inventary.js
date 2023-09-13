@@ -10,7 +10,7 @@ export default async (req, res, next) => {
       message: "Quantity most be higher than 0.",
     });
   } else {
-    if (quantity < StockProduct.stock) {
+    if (quantity <= StockProduct.stock) {
       let stock = StockProduct.stock - quantity;
       await Product.findByIdAndUpdate(
         product_id,
