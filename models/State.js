@@ -6,6 +6,7 @@ const schema = new Schema(
   {
     name: { type: String, required: true },
     description: { type: String, required: true },
+    state: { type: Number, required: true, default: 1 },
   },
   {
     timestamps: true,
