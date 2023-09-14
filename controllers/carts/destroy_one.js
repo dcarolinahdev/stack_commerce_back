@@ -7,12 +7,12 @@ export default async function (req, res, next) {
     if (del) {
       return res.status(200).json({
         success: true,
-        response: "Product removed from cart",
+        message: "Product removed from Cart",
       });
     } else {
       return res.status(404).json({
         success: false,
-        response: "Product is not removed from cart",
+        message: "Product is not removed from Cart",
       });
     }
   } catch (error) {

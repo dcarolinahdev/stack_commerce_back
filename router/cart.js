@@ -6,11 +6,12 @@ import destroy_one from "../controllers/carts/destroy_one.js";
 import isValidStock from "../middlewares/isValidStock.js";
 import destroy from "../controllers/carts/destroy.js";
 import inventary from "../middlewares/inventary.js";
+import cartExists from "../middlewares/cartExists.js";
 
 let cartRouter = Router();
 
 cartRouter.get("/", read);
-cartRouter.post("/", inventary, create);
+cartRouter.post("/", inventary, cartExists, create);
 cartRouter.put("/:id", isValidStock, update);
 cartRouter.delete("/", destroy);
 cartRouter.delete("/:id", destroy_one);
