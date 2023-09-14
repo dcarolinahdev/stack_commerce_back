@@ -2,7 +2,7 @@ import Product from "../../models/Product.js"
 
 export default async ( req,res,next ) => {
     try {
-        let one = await Product.findById( req.params.id, )
+        let one = await Product.findById( req.params.id )
         if ( one ) {
             return res.status(200).json({
                 success: true,

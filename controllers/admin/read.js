@@ -1,12 +1,10 @@
 import Cart from "../../models/Cart.js";
 import State from "../../models/State.js";
 
-export default async function (req, res, next) {
+export default async (req, res, next) => {
   try {
-    const state = await State.findOne({ state: 1 });
-    let queries = { user_id: req.user._id, state_id: state };
-
-    let all = await Cart.find(queries)
+    let all = await Cart.find({})
+      .populate("user_id", "name email address phone")
       .populate("product_id", "name price image")
       .populate("state_id", "name description state");
 
@@ -15,6 +13,6 @@ export default async function (req, res, next) {
       response: all,
     });
   } catch (error) {
-    next(error);
+    return next(error);
   }
-}
+};
