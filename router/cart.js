@@ -7,11 +7,13 @@ import isValidStock from "../middlewares/isValidStock.js";
 import destroy from "../controllers/carts/destroy.js";
 import inventary from "../middlewares/inventary.js";
 import cartExists from "../middlewares/cartExists.js";
+import buy from "../controllers/carts/buy.js";
 
 let cartRouter = Router();
 
 cartRouter.get("/", read);
 cartRouter.post("/", inventary, cartExists, create);
+cartRouter.put("/",  buy);
 cartRouter.put("/:id", isValidStock, update);
 cartRouter.delete("/", destroy);
 cartRouter.delete("/:id", destroy_one);

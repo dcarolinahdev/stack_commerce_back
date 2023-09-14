@@ -5,6 +5,7 @@ export default async ( req,res,next ) => {
         let one = await Product
             .findById( req.params.id, )
             .populate("category_id", "title")
+        
         if ( one ) {
             return res.status(200).json({
                 success: true,
