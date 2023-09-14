@@ -2,8 +2,12 @@ import Product from "../models/Product.js";
 
 export default async (req, res, next) => {
   let { product_id, quantity } = req.body;
+
+  console.log("====================================");
+  console.log(req.body);
+  console.log("====================================");
   let StockProduct = await Product.findById(product_id);
-  if (quantity <= 0) {
+  if (quantity === 0) {
     return res.status(400).json({
       success: false,
       response: null,

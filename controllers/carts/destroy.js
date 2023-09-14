@@ -8,12 +8,12 @@ export default async function (req, res, next) {
     if (del) {
       return res.status(200).json({
         success: true,
-        response: "Cart removed from user.",
+        message: "Cart removed from User.",
       });
     } else {
       return res.status(404).json({
         success: false,
-        response: "Cart is not removed from user.",
+        message: "Cart not removed from User.",
       });
     }
   } catch (error) {
